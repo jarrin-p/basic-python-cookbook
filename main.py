@@ -54,8 +54,11 @@ print("\n\n") # two lines for separating output
 # lists and looping
 print('looping')
 
-# assignments will overwrite.
+# this assignment will be overwritten
 some_variable = 20
+
+# in python, lists can contain different data types.
+# this can be a gift and a curse. pay close attention to what's in your list.
 some_variable = ['x', 'y', 1, 2]
 for variable in some_variable: # see that some_variable is no longer 20
     print(variable)
@@ -92,15 +95,16 @@ print(nested_array[0])
 print(nested_array[1])
 print(nested_array[2])
 print(nested_array[3])
+print(nested_array[3][0]) # accessing the array inside
 print("\n\n") # two lines for separating output
 
+print('objects in arrays')
 # we can also store objects themselves in lists
 object_array = [
         SomeClass('a', 'b', 'c'),
         SomeClass('d', 'e', 'f'),
         SomeClass('g', 'h', 'i')
 ]
-print('objects in arrays')
 for obj in object_array:
     print('type of `obj`: ' + str(type(obj)))
     print(obj.get_set_params())
@@ -126,4 +130,7 @@ print(some_dict[key_y])
 # we can use the values stored at keys similar to how we use variables.
 print(add_numbers(some_dict['x'], some_dict['y']))
 
-# you can also directly assign to dictionaries.
+# you can also create new keys by directly assign to them.
+new_key = 'z'
+some_dict[new_key] = 50
+print(some_dict['z'])
