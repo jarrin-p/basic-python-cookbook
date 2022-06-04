@@ -11,3 +11,12 @@ class SomeClass:
     def get_set_params(self):
         return [self.param_1, self.param_2, self.param_3]
 
+class AnotherClass:
+    def __init__(self, other_param_1, class_obj, other_param_2):
+        self.other_param_1 = other_param_1
+        self.class_obj = class_obj
+        self.other_param_2 = other_param_2
+
+    def get_class_obj(self):
+        return self.class_obj
+

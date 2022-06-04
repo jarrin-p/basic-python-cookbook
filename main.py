@@ -11,6 +11,7 @@ import some_package
 # this lets you directly access it by saying `SomeClass()` opposed 
 # to `some_package.SomeClass()`
 from some_package import SomeClass
+from some_package import AnotherClass
 
 # you can append `as alias` to import something and rename it.
 # if a package isn't found, run `pip install package_name`
@@ -134,3 +135,18 @@ print(add_numbers(some_dict['x'], some_dict['y']))
 new_key = 'z'
 some_dict[new_key] = 50
 print(some_dict['z'])
+print("\n\n") # two lines for separating output
+
+# class with class as variable
+another_classes = [
+        AnotherClass("a string", SomeClass('x', 'y', 'z'), 100),
+        AnotherClass("a string", SomeClass('x', 'y', 'z'), 100)
+]
+
+# two of the same thing
+# using a "getter" method (that returns a value instead of directly accessing)
+# is often considered "safer" because you don't risk accidentally changing it
+# somehow.
+print('class with a variable thats also a class')
+print(another_classes[0].class_obj.get_set_params())
+print(another_classes[0].get_class_obj().get_set_params())
